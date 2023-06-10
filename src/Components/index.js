@@ -12,11 +12,11 @@ const Card = () => {
 
   useEffect(() => {
     try {
-       dispatch(fetchingData());
-    } catch (eror) {
+      dispatch(fetchingData());
+    }catch (eror) {
       console.log(eror);
     }
-   
+
   }, []);
 
   const handleSelect = (id) => {
@@ -33,7 +33,7 @@ const Card = () => {
     <>
       <select onChange={handleClick}>
         {data.data.map((cats) => {
-          const { id, name } = cats;
+          const { id, name, cfa_url, vetstreet_url } = cats;
           return (
             <>
               <option value={id}>{name}</option>
@@ -47,100 +47,99 @@ const Card = () => {
           return (
             <div key={id} className="cats-container">
               <img src={url} className="img" />
-              {idname.map((cats) => {
-                const {
-                  id,
-                  name,
-                  description,
-                  temperament,
-                  origin,
-                  weight,
-                  wikipedia_url,
-                } = cats;
-                console.log(cats);
-                return (
-                  <>
-                    <h3
-                      style={{
-                        fontSize: "24px",
-                        textAlign: "center",
-                        paddingTop: "20px",
-                      }}
-                    >
-                      {name}
-                    </h3>
-                    <h4 style={{ textAlign: "center" }}>id : {id}</h4>
-                    <p
-                      style={{
-                        textAlign: "center",
-                        paddingLeft: "660px",
-                        paddingRight: "660px",
-                      }}
-                    >
-                      {description}
-                    </p>
-                    <p style={{ textAlign: "center" }}>---</p>
-                    <p
-                      style={{
-                        textAlign: "center",
-                        paddingLeft: "660px",
-                        paddingRight: "660px",
-                        paddingTop: "5px",
-                        fontStyle: "italic",
-                      }}
-                    >
-                      {temperament}
-                    </p>
-                    <p
-                      style={{
-                        textAlign: "center",
-                        paddingLeft: "660px",
-                        paddingRight: "660px",
-                        paddingTop: "5px",
-                      }}
-                    >
-                      {origin}
-                    </p>
-                    <p
-                      style={{
-                        textAlign: "center",
-                        paddingLeft: "660px",
-                        paddingRight: "660px",
-                        paddingTop: "5px",
-                      }}
-                    >
-                      {weight.metric} kgs
-                    </p>
-                    <p
-                      style={{
-                        textAlign: "center",
-                        paddingLeft: "660px",
-                        paddingRight: "660px",
-                        paddingTop: "5px",
-                      }}
-                    >
-                      {weight.imperial} average life span
-                    </p>
-                    <Link
-                      href={wikipedia_url}
-                      style={{
-                        color: "orange",
-                        textAlign: "center",
-                        display: "block",
-                        paddingTop: "5px",
-                      }}
-                    >
-                      {" "}
-                      WIKIPEDIA{" "}
-                    </Link>
-                    {/* styler@| enqan vor tvel em  */}
-                  </>
-                );
-              })}
             </div>
           );
         })}
       </Carousel>
+      {idname.map((cats) => {
+        const {
+          id,
+          name,
+          description,
+          temperament,
+          origin,
+          weight,
+          wikipedia_url,
+        } = cats;
+        return (
+          <>
+            <h3
+              style={{
+                fontSize: "24px",
+                textAlign: "center",
+                paddingTop: "20px",
+              }}
+            >
+              {name}
+            </h3>
+            <h4 style={{ textAlign: "center" }}>id : {id}</h4>
+            <p
+              style={{
+                textAlign: "center",
+                paddingLeft: "660px",
+                paddingRight: "660px",
+              }}
+            >
+              {description}
+            </p>
+            <p style={{ textAlign: "center" }}>---</p>
+            <p
+              style={{
+                textAlign: "center",
+                paddingLeft: "660px",
+                paddingRight: "660px",
+                paddingTop: "5px",
+                fontStyle: "italic",
+              }}
+            >
+              {temperament}
+            </p>
+            <p
+              style={{
+                textAlign: "center",
+                paddingLeft: "660px",
+                paddingRight: "660px",
+                paddingTop: "5px",
+              }}
+            >
+              {origin}
+            </p>
+            <p
+              style={{
+                textAlign: "center",
+                paddingLeft: "660px",
+                paddingRight: "660px",
+                paddingTop: "5px",
+              }}
+            >
+              {weight.metric} kgs
+            </p>
+            <p
+              style={{
+                textAlign: "center",
+                paddingLeft: "660px",
+                paddingRight: "660px",
+                paddingTop: "5px",
+              }}
+            >
+              {weight.imperial} average life span
+            </p>
+            <Link
+              href={wikipedia_url}
+              style={{
+                color: "orange",
+                textAlign: "center",
+                display: "block",
+                paddingTop: "5px",
+              }}
+            >
+              {" "}
+              WIKIPEDIA{" "}
+            </Link>
+            {/* styler@| enqan vor tvel em  */}
+          </>
+        );
+      })}
     </>
   );
 };
