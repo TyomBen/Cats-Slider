@@ -5,13 +5,6 @@ select {
     margin-top: 5px;
 }
 
-.information-block {
-    width: 603;
-    height: 300px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 8px;
-    background-color: red;
-}
-
 .img {
     width: 603.13px;
     height: 500px;

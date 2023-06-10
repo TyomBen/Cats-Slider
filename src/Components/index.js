@@ -132,6 +132,7 @@ const Card = () => {
                 display: "block",
                 paddingTop: "5px",
               }}
+              target="_blank"
             >
               {" "}
               WIKIPEDIA{" "}
