@@ -1,0 +1,26 @@
+select {
+    width: 333px;
+    height: 32px;
+    margin-left: 800px;
+    margin-top: 5px;
+}
+
+.information-block {
+    width: 603;
+    height: 300px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 8px;
+    background-color: red;
+}
+
+.img {
+    width: 603.13px;
+    height: 500px;
+    border-radius: 15px;
+    color: #fff;
+    line-height: 160px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+};
+
