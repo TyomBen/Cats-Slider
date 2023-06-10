@@ -7,7 +7,7 @@ import Link from "antd/es/typography/Link";
 const Card = () => {
   const [idname, setIdName] = useState([]);
   const data = useSelector(({ data }) => data);
-  const dataSlider = useSelector((state) => state.data.dataSlider);
+  const {dataSlider} = useSelector(({data}) => data);
   const dispatch = useDispatch();
 
   useEffect(() => {
