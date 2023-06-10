@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchingData, fetchingDataSlides } from "../store/actions/action";
 import { Carousel } from "antd";
@@ -35,9 +35,9 @@ const Card = () => {
         {data.data.map((cats) => {
           const { id, name, cfa_url, vetstreet_url } = cats;
           return (
-            <>
+            <React.Fragment key={id}>
               <option value={id}>{name}</option>
-            </>
+            </React.Fragment>
           );
         })}
       </select>
@@ -59,10 +59,11 @@ const Card = () => {
           temperament,
           origin,
           weight,
+          life_span,
           wikipedia_url,
         } = cats;
         return (
-          <>
+          <React.Fragment key={id}>
             <h3
               style={{
                 fontSize: "24px",
@@ -122,7 +123,7 @@ const Card = () => {
                 paddingTop: "5px",
               }}
             >
-              {weight.imperial} average life span
+              {life_span} average life span
             </p>
             <Link
               href={wikipedia_url}
@@ -138,7 +139,7 @@ const Card = () => {
               WIKIPEDIA{" "}
             </Link>
             {/* styler@| enqan vor tvel em  */}
-          </>
+          </React.Fragment>
         );
       })}
     </>

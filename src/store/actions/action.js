@@ -28,9 +28,6 @@ export const fetchingData = () => {
 
 export const fetchingDataSlides = (id) => {
   return async (dispatch) => {
-    {
-      console.log(id);
-    }
     try {
       const response = await fetch(
         `${URL}images/search?limit=8&size=full&breed_id=${id}&sub_id=demo-20efd8`
